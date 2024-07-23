@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TEST THIRD</title>
+</head>
+<style type="text/css">
+	.div{
+		margin: 6rem 12rem;
+		height: 20rem;
+		width: 36rem;
+		background-size: 100% 100%;
+		box-shadow: 20px 20px 10px grey;
+		animation: slider 10s linear infinite;
+	}
+	@keyframes slider {
+		0%{
+			background-image: url(img/1.jpg);
+		}
+		30%{
+			background-image: url(img/2.jpg);
+		}
+		60%{
+			background-image: url(img/3.jpg);
+		}
+		80%{
+			background-image: url(img/4.jpg);
+		}
+		100%{
+			background-image: url(img/5.jpg);
+		}
+	}
+</style>
+<body>
+	<center>
+<div class="div"></div>
+</center>
+</body>
+</html>

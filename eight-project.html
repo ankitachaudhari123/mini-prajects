@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Eight Project</title>
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css"
+  rel="stylesheet"
+/>
+</head>
+<style type="text/css">
+	body{
+		margin: 0;
+		padding: 20px;
+		color: #ffffff;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: rgb(238, 231, 235);
+	}
+	.btn{
+		position: relative;
+		background: #ff606b;
+		color: #ffffff;
+		border:none;
+		padding: 10px 20px;
+		cursor: pointer;
+		border-radius: 20px;
+		font-size: 1.4rem;
+		margin: 0 10px;
+		box-shadow: 0 0 10px rgba(0,0,0,0.1);
+		overflow: hidden;transition: all 0.3 ease;
+	}
+	#loading-bar{
+		background: rgb(241, 72, 72);
+		z-index: 5;
+		position: absolute;
+		left: 0;
+		top: 0;
+		transform-origin: right;
+	}
+	.toLoadingBar{
+		animation: toLoadingBar 0.3s linear ;
+	}
+	.isLoading{
+		animation: loading 1s 30des linear;
+	}
+	.toButton{
+		animation: toButton 0.3s linear; 
+	}
+	 @keyframes toLoadingBar{
+	 	0%{
+	 		width: 300px;
+	 		height: 5px;
+	 	}
+	 	20%{
+	 		height: 10px;
+	 	}
+	 	100%{
+	 		width: 4500px;
+	 		height: 30px
+	 	}
+	 }
+	 @keyframes toButton{
+	 	0%{
+	 		width: 450px;
+	 		height: 10px;
+	 	}
+	 	20%{
+	 		height: 60px;
+	 	}
+	 	100%{
+	 		width: 700px;
+	 		height: 60px
+	 	}
+	 }
+	 @keyframes loading{
+	 	0%{
+	 		width: 0px;
+	 		height: 10px;
+	 	}
+	 	100%{
+	 		width: 100%;
+	 		height: 10px
+	 	}
+	 }
+</style>
+<body>
+<button class="btn" id="btn-download" onclick="triggerDownload()">
+	<span id="loading-bar"></span>
+	<span id="content"><i class="fas fa-cloud-arrow-down"></i>Download</span>
+</button>
+</body>
+<script type="text/javascript">
+	function triggerDownload(){
+		const btn = document.getElementById('btn-download');
+		const loadingBar = document.getElementById('loading-bar');
+		const content = document.getElementById('content');
+
+		content.innerHTML=""
+		btn.classList.add('toLoadingBar');
+		loadingBar.classList.add('isLoading');
+		setTimeout(()=>{
+			loadingBar.classList.add('isLoading');
+			setTimeout(()=>{
+				loadingBar.style.display = 'none';
+				btn.innerHTML = 'Downloaded!';
+				btn.classList.add('toButton');
+			},1000);
+		},300);
+	}
+</script>
+</html>

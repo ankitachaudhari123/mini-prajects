@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>project-15</title>
+</head>
+<style type="text/css">
+	.text-effect-weapper, .text{
+		&::before,
+		&::after{
+			content:"";
+			position: absolute;
+			inset:0;
+			pointer-events: none;
+		}
+	}
+	.text-effect-weapper{
+		--spotlight-color:white;
+		overflow: hidden;
+		position: relative;
+
+		&::before{
+			animation:shimmer 5s infinite linear;
+			background: radial-gradient(circle, var(--spotlight-color), transparent 25%) 0 0 / 25%, 25%, radial-gradient(circle, var(--spotlight-color), black 25%) 50% 50% / 12.5%, 12.5%;
+			insert-block-start:-100%;
+			insert-inline-start:-100%;
+			mix-blend-mode:color-dodge;
+			z-index: 3;
+		}
+
+		&::after{
+			backdrop-filter: blur(1px) brightness(90%) contrast(150%);
+			z-index: 4;
+		}
+	}
+	@keyframes shimmer {
+		100%{
+			transform: translate3d(50%, 50%, 0);
+		}
+	}
+	.text{
+		--background-color: black;
+		--text-color:white;
+		--color-1:red;
+		--color-2:blue;
+		color: transparent;
+		text-shadow: 0 0 0.02em var(--background-color), 0 0 0.02em var(--text-color), 0 0 0.02em var(--text-color), 0 0 0.02em var(--text-color);
+
+		&::before{
+			backdrop-filter:blue(0.013em) brightness(400%);
+			z-index: 1;
+		}
+
+		&::after{
+			background: linear-gradient(45deg, var(--color-1), var(--color-2));
+			mix-blend-mode: multiply;
+			z-index: 2
+		}
+	}
+</style>
+<body>
+	<div class="text-effect-weapper">
+		<center>
+			<h1 class="text" contenteditable>Ankita</h1>
+		</center>	
+	</div>
+</body>
+</html>
