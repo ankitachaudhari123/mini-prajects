@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project-17</title>
+</head>
+<style>
+   body{
+    background: #000a1f;
+   }
+   .container{
+    margin: 100px 0 0 200px;
+    width: 70%;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+   }
+   .container img{
+    width: 10%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.684);
+    transition: all ease-in-out 0.5s;
+   }
+   .container img:hover{
+    width: 75%;
+   }
+   .text{
+    color: rgba(255, 255, 255, 0.684);
+    text-align: center;
+    font-size: 50px;
+   }
+</style>
+<body>
+    <h1 class="text">Hover Me</h1>
+    <div class="container">
+        <img src="img/1.jpg" alt="">
+        <img src="img/2.jpg" alt="">
+        <img src="img/3.jpg" alt="">
+        <img src="img/4.jpg" alt="">
+        <img src="img/5.jpg" alt="">
+    </div>
+</body>
+</html>
