@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-19 - loading</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        background-color: black;
+    }
+    .spinner{
+        width: 50px;
+        height: 50px;
+        border: 10px solid;
+        border-color: #fff transparent;
+        border-radius: 50%;
+        animation: spin 1.2s linear infinite;
+    }
+    @keyframes spin{
+        to{
+            transform: rotate(360deg);
+        }
+    }
+</style>
+<body>
+    <div class="spinner"></div>
+</body>
+</html>
